@@ -1,24 +1,45 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| nickname           | string              | null: false             |
+| email              | string              | null: false             |
+| password           | string              | null: false             |
+| family_name        | string              | null: false             |
+| first_name         | string              | null: false             |
+| family_name_kana   | string              | null: false             |
+| first_name_kana    | string              | null: false             |
+| birth_day          | date                | null: false             |
 
-* Ruby version
+### Association
 
-* System dependencies
+has_many :products
+has_many :card
 
-* Configuration
+## products table
 
-* Database creation
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| image              | string              | null: false             |
+| name               | string              | null: false             |
+| description        | string              | null: false             |
+| detail             | string              | null: false             |
+| delivery           | string              | null: false             |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+belongs_to :user
+belongs_to :card
 
-* Services (job queues, cache servers, search engines, etc.)
+## card table
 
-* Deployment instructions
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| card_id            | string              | null: false             |
+| customer_id        | string              | null: false             |
 
-* ...
+### Association
+
+belongs_to :user
