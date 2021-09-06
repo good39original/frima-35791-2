@@ -16,17 +16,18 @@
 ### Association
 
 has_many :products
-has_many :card
+has_many :cards
 
 ## products table
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| image              | string              | null: false             |
+|               ||
 | name               | string              | null: false             |
-| description        | string              | null: false             |
+| description        | text                | null: false             |
 | detail             | string              | null: false             |
 | delivery           | string              | null: false             |
+| user               | references          | foreign_key: true       |
 
 ### Association
 
@@ -39,6 +40,8 @@ belongs_to :card
 |--------------------|---------------------|-------------------------|
 | card_id            | string              | null: false             |
 | customer_id        | string              | null: false             |
+| user               | reference           | foreign_key: true       |
+| card               | reference           | foreign_key: true       |
 
 ### Association
 
