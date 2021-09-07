@@ -28,8 +28,9 @@ has_many :cards
 | category_id        | integer             | null: false             |
 | status_id          | integer             | null: false             |
 | shipping_id        | integer             | null: false             |
-| area_id            | integer             | null: false             |
+| prefecture         | integer             | null: false             |
 | day_id             | integer             | null: false             |
+| money_id           | integer             | NOT NULL                |
 
 ### Association
 
@@ -40,18 +41,23 @@ has_one :card
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| user               | reference           | foreign_key: true       |
-| card               | reference           | foreign_key: true       |
+| user               | references          | foreign_key: true       |
+| card               | references          | foreign_key: true       |
+
+### Association
+
+has_many: products
 
  ## addresses table
 
- | Column            | Type                | Option                  |
- | postal_code       | string              | null: false             |
- | prefectures       | string              | null: false             |
- | municipalities    | string              | null: false             |
- | address           | string              | null: false             |
- | building_name     | string              | null: false             |
- | telephone_number  | string              | null: false             |
+| Column            | Type                | Option                  |
+| postal_code       | string              | null: false             |
+| prefecture        | integer             | null: false             |
+| municipalities    | string              | null: false             |
+| address           | string              | null: false             |
+| building_name     | string              |                         |
+| telephone_number  | string              | null: false             |
+| card              | references          | foreign_key_true        |
 
 ### Association
 
