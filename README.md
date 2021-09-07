@@ -22,26 +22,41 @@ has_many :cards
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-|               ||
 | name               | string              | null: false             |
 | description        | text                | null: false             |
 | detail             | string              | null: false             |
 | delivery           | string              | null: false             |
 | user               | references          | foreign_key: true       |
+| category_id        | integer             | null: false             |
+| status_id          | integer             | null: false             |
+| shipping_id        | integer             | null: false             |
+| area_id            | integer             | null: false             |
+| day_id             | integer             | null: false             |
 
 ### Association
 
 belongs_to :user
-belongs_to :card
+has_one :card
 
 ## card table
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| card_id            | string              | null: false             |
-| customer_id        | string              | null: false             |
 | user               | reference           | foreign_key: true       |
 | card               | reference           | foreign_key: true       |
+
+ ## address table
+
+ | Column            | Type                | Option                  |
+ | information       | string              | null: false             |
+ | deadline          | string              | null: false             |
+ | security          | string              | null: false             |
+ | postal            | string              | null: false             |
+ | prefectures       | string              | null: false             |
+ | district          | string              | null: false             |
+ | address           | string              | null: false             |
+ | build             | string              | null: false             |
+ | number            | string              | null: false             |
 
 ### Association
 
