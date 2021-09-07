@@ -5,8 +5,8 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | nickname           | string              | null: false             |
-| email              | string              | null: false             |
-| password           | string              | null: false             |
+| email              | string              | unique: true            |
+| encrypted_password | string              | null: false             |
 | family_name        | string              | null: false             |
 | first_name         | string              | null: false             |
 | family_name_kana   | string              | null: false             |
@@ -20,17 +20,16 @@ has_many :cards
 
 ## products table
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| name               | string              | null: false             |
-| description        | text                | null: false             |
-| user               | references          | foreign_key: true       |
-| category_id        | integer             | null: false             |
-| status_id          | integer             | null: false             |
-| shipping_id        | integer             | null: false             |
-| prefecture         | integer             | null: false             |
-| day_id             | integer             | null: false             |
-| money_id           | integer             | NOT NULL                |
+| Column             | Type                | Options                              |
+|--------------------|---------------------|--------------------------------------|
+| name               | string              | null: false                          |
+| description        | text                | null: false                          |
+| user               | references          | foreign_key: true, null: false       |
+| category_id        | integer             | null: false                          |
+| status_id          | integer             | null: false                          |
+| shipping_id        | integer             | null: false                          |
+| prefecture_id      | integer             | null: false                          |
+| money              | integer             | null: false                          |
 
 ### Association
 
@@ -39,10 +38,10 @@ has_one :card
 
 ## card table
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| user               | references          | foreign_key: true       |
-| card               | references          | foreign_key: true       |
+| Column             | Type                | Options                             |
+|--------------------|---------------------|-------------------------------------|
+| user               | references          | foreign_key: true, null:false       |
+| card               | references          | foreign_key: true                   |
 
 ### Association
 
@@ -50,17 +49,18 @@ has_many: products
 
  ## addresses table
 
-| Column            | Type                | Option                  |
-| postal_code       | string              | null: false             |
-| prefecture        | integer             | null: false             |
-| municipalities    | string              | null: false             |
-| address           | string              | null: false             |
-| building_name     | string              |                         |
-| telephone_number  | string              | null: false             |
-| card              | references          | foreign_key_true        |
+| Column            | Type                | Option                               |
+|-------------------|---------------------|--------------------------------------|
+| postal_code       | string              | null: false                          |
+| prefecture_id     | integer             | null: false                          |
+| municipalities    | string              | null: false                          |
+| address           | string              | null: false                          |
+| building_name     | string              |                                      | 
+| telephone_number  | string              | null: false                          |
+| card              | references          | foreign_key_true, null: false        |
 
 ### Association
 
-belongs_to :user
+belongs_to :products
 
 ----------------------------------------------------------------------
