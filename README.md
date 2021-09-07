@@ -24,8 +24,6 @@ has_many :cards
 |--------------------|---------------------|-------------------------|
 | name               | string              | null: false             |
 | description        | text                | null: false             |
-| detail             | string              | null: false             |
-| delivery           | string              | null: false             |
 | user               | references          | foreign_key: true       |
 | category_id        | integer             | null: false             |
 | status_id          | integer             | null: false             |
@@ -45,18 +43,15 @@ has_one :card
 | user               | reference           | foreign_key: true       |
 | card               | reference           | foreign_key: true       |
 
- ## address table
+ ## addresses table
 
  | Column            | Type                | Option                  |
- | information       | string              | null: false             |
- | deadline          | string              | null: false             |
- | security          | string              | null: false             |
- | postal            | string              | null: false             |
+ | postal_code       | string              | null: false             |
  | prefectures       | string              | null: false             |
- | district          | string              | null: false             |
+ | municipalities    | string              | null: false             |
  | address           | string              | null: false             |
- | build             | string              | null: false             |
- | number            | string              | null: false             |
+ | building_name     | string              | null: false             |
+ | telephone_number  | string              | null: false             |
 
 ### Association
 
