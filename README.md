@@ -30,22 +30,25 @@ has_many :cards
 | shipping_id        | integer             | null: false                          |
 | prefecture_id      | integer             | null: false                          |
 | money              | integer             | null: false                          |
+| charge_id          | integer             | null: false                          |
 
 ### Association
 
 belongs_to :user
-has_one :card
+has_many :card
 
 ## card table
 
 | Column             | Type                | Options                             |
 |--------------------|---------------------|-------------------------------------|
 | user               | references          | foreign_key: true, null:false       |
-| card               | references          | foreign_key: true                   |
+| product            | references          | foreign_key: true                   |
 
 ### Association
 
-has_many: products
+belongs_to: products
+belongs_to: address
+belongs_to: user
 
  ## addresses table
 
@@ -61,6 +64,6 @@ has_many: products
 
 ### Association
 
-belongs_to :products
+belongs_to :card
 
 ----------------------------------------------------------------------
