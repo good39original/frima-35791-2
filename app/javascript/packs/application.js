@@ -7,6 +7,17 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+//import Turbolinks from "turbolinks"
+//Rails.start()
+//Turbolinks.start()
+//ActiveStorage.start()
+//require("../item_price");
+
+//= require jquery
+//= require jquery.turbolinks
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+
+
