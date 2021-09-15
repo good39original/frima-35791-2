@@ -106,7 +106,3 @@ RSpec.describe User, type: :model do
    end
   end
  end
-
-
-
-  #全部のテストコードが@userに対して代入するものがFactry Botだった場合はこちらを持って代入することが日強yだと斧割れる可能性があるとも割れるかあ脳性がある。

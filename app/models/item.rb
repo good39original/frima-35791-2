@@ -6,8 +6,6 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :charge
 
-  validates :title, :text, presence: true
-
   validates :category_id, numericality: { other_than: 1 , message: "can't be blank" }
 
 end
