@@ -1,12 +1,13 @@
 FactoryBot.define do
   factory :item do
-    name            {"服"}
+    image           {}
+    name            {"hoge"}
     description     {"aaaaa"}
     category_id     {1}
-    status_id       {"aaaaa"}
-    shipping_id     {"aaaaa"}
+    status_id       {1}
+    shipping_id     {"11111"}
     prefecture_id   {1}
-    money           {11111}
-    charge_id       {"aaaaa"}
+    money           {"9999999"}
+    charge_id       {1}
   end
 end

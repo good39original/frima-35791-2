@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.build(:user)
   end
 
-    context '新規登録できないとき' do
+  context '新規登録できないとき' do
     it "重複したメールアドレスは登録できない" do
       @user.save
       another_user = FactoryBot.build(:user)
