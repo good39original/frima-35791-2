@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
-  #@item = FactoryBot.build(:item)
+  @item = FactoryBot.build(:item)
   #pending "add some examples to (or delete) #{__FILE__}"
   context '新規登録できないとき' do
     it "画像が空だと出品できない" do
@@ -24,7 +24,7 @@ RSpec.describe Item, type: :model do
       #@user.valid?
       #expect(@user.errors.full_messages).to include("money is out of setting range")
     end
-    it "カテゴリーが空だと出品できない" do
+    it "カテゴリーが空だと出品できない" 
       #@user.category_id = 
       #@user.valid?
       #expect(@user.errors.full_messages).to include("Category can't be blank")
@@ -55,4 +55,4 @@ RSpec.describe Item, type: :model do
     end
    end
   end
- end
+ 
