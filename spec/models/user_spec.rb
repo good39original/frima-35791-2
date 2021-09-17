@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.build(:user)
   end
 
-    context '新規登録できないとき' do
+  context '新規登録できないとき' do
     it "重複したメールアドレスは登録できない" do
       @user.save
       another_user = FactoryBot.build(:user)
@@ -106,7 +106,3 @@ RSpec.describe User, type: :model do
    end
   end
  end
-
-
-
-  #全部のテストコードが@userに対して代入するものがFactry Botだった場合はこちらを持って代入することが日強yだと斧割れる可能性があるとも割れるかあ脳性がある。
