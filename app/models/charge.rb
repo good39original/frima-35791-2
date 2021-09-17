@@ -7,6 +7,6 @@ class Charge < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :charge
+  has_many :items
   
 end

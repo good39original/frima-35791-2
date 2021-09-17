@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   validates :name,          presence: true        
   validates :description,   presence: true
   validates :money,         presence: true
-  validates :money,         numericality: { other_than: 1 , message: "is invalid. Input half-width characters" }
+  validates :money,         presence: true
   validates :money,         numericality: { other_than: 1 , message: "is out of setting range" }
   validates :status_id,     numericality: { other_than: 1 , message: "can't be blank" }
   validates :category_id,   numericality: { other_than: 1 , message: "can't be blank" }

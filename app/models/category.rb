@@ -10,6 +10,6 @@ class Category < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :category
+  has_many :items
   
 end
