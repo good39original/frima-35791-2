@@ -15,7 +15,7 @@ RSpec.describe Item, type: :model do
     it "価格に半角数字以外が含まれている場合は出品できない（※半角数字以外が一文字でも含まれていれば良い）" do
       @item.money = "1１"
       @item.valid?
-      expect(@item.errors.full_messages).to include("Money is out of setting range")
+      expect(@item.errors.full_messages).to include("Money is not a number")
     end
     it "価格が300円未満では出品できない" do
       @item.money = '299'
@@ -23,9 +23,9 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Money must be greater than or equal to 300")
     end
     it "価格が9_999_999円を超えると出品できない" do
-      @item.money = '1_000_000'
+      @item.money = 10000000
       @item.valid?
-      expect(@item.errors.full_messages).to include("Money must be an integer")
+      expect(@item.errors.full_messages).to include("Money must be less than or equal to 9999999")
     end
     it "名前が空だと出品できない" do
       @item.name = ''
