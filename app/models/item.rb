@@ -12,8 +12,8 @@ class Item < ApplicationRecord
   validates :name,          presence: true        
   validates :description,   presence: true
   validates :money,         presence: true
-  validates :money,         presence: true, numericality: { only_integer: true,greater_than: 300, less_than: 10000000}
-  validates :money,         numericality:  { other_than: 1 , message: "is out of setting range" }
+  validates :money, numericality: { other_than: 1 , message: "is out of setting range" }
+  validates :money,         presence: true, numericality: { only_integer: true,greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999}
   validates :status_id,     numericality:  { other_than: 1 , message: "can't be blank" }
   validates :category_id,   numericality:  { other_than: 1 , message: "can't be blank" }
   validates :shipping_id,   numericality:  { other_than: 1 , message: "can't be blank" }
