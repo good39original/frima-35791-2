@@ -120,11 +120,13 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.1)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     mysql2 (0.5.3)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-darwin)
+    nokogiri (1.12.4)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.21.0)
@@ -266,7 +268,10 @@ GEM
 
 PLATFORMS
   ruby
+<<<<<<< HEAD
   x86_64-darwin-20
+=======
+>>>>>>> 171d7b591cb9f79932150029a8ccfd76cf32f0c8
 
 DEPENDENCIES
   active_hash
@@ -299,4 +304,3 @@ RUBY VERSION
    ruby 2.7.1p83
 
 BUNDLED WITH
-   2.2.27
