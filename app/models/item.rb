@@ -6,17 +6,18 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :charge
   has_one_attached :image
+  has_many :user
 
   validates :image,         presence: true
   validates :name,          presence: true        
   validates :description,   presence: true
   validates :money,         presence: true
-  validates :money,         presence: true
-  validates :money,         numericality: { other_than: 1 , message: "is out of setting range" }
-  validates :status_id,     numericality: { other_than: 1 , message: "can't be blank" }
-  validates :category_id,   numericality: { other_than: 1 , message: "can't be blank" }
-  validates :shipping_id,   numericality: { other_than: 1 , message: "can't be blank" }
-  validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank" }
+  validates :money,         presence: true, numericality: { only_integer: true,greater_than: 300, less_than: 10000000}
+  validates :money,         numericality:  { other_than: 1 , message: "is out of setting range" }
+  validates :status_id,     numericality:  { other_than: 1 , message: "can't be blank" }
+  validates :category_id,   numericality:  { other_than: 1 , message: "can't be blank" }
+  validates :shipping_id,   numericality:  { other_than: 1 , message: "can't be blank" }
+  validates :prefecture_id, numericality:  { other_than: 1 , message: "can't be blank" }
   validates :charge_id,     numericality: { other_than: 1 , message: "can't be blank" }
 
 end
