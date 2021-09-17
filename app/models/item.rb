@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :charge
   has_one_attached :image
-  has_many :user
+  belongs_to :user
 
   validates :image,         presence: true
   validates :name,          presence: true        

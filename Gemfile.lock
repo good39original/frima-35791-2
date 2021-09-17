@@ -268,10 +268,7 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
-  x86_64-darwin-20
-=======
->>>>>>> 171d7b591cb9f79932150029a8ccfd76cf32f0c8
+
 
 DEPENDENCIES
   active_hash
@@ -302,5 +299,3 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.1p83
-
-BUNDLED WITH
