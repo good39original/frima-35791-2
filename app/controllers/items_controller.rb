@@ -19,12 +19,22 @@ class ItemsController < ApplicationController
     end
   end
 
-  #def update
-    #if item.save
-     # redirect_to item_path
-    #else
-    #  render :edit
-    #end
+  #def edit
+  #end
+
+  def update
+    if item.save
+      redirect_to item_path
+    else
+      render :edit
+    end
+  end
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  #def destroy
   #end
 
   private
