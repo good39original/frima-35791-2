@@ -20,8 +20,8 @@ class ItemsController < ApplicationController
   end
 
   #def update
-    #if current_user.update(user_params)
-     # redirect_to root_path
+    #if item.save
+     # redirect_to item_path
     #else
     #  render :edit
     #end
