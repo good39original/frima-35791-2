@@ -19,11 +19,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  #def edit
-  #end
+  def edit
+    @item = Item.find(params[:id])
+  end
 
   def update
-    if item.save
+    if @item = Item.find(params[:id])
       redirect_to item_path
     else
       render :edit
@@ -34,8 +35,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  #def destroy
-  #end
+  def destroy
+   @item = Item.find(params[:id])
+   @item.update(item_params)
+  end
 
   private
 
