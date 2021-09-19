@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  #def edit
+  #end
 
   def update
     if item.save
@@ -34,8 +34,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def destroy
-  end
+  #def destroy
+  #end
 
   private
 
