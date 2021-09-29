@@ -3,12 +3,14 @@ class  Order
   attr_accessor :item_id, :user_id, :postal_code, :prefecture_id, :municipalities, :address, :building_name, :telephone_number, :token
   
   with_options presence: true do
-    validates :token, presence: true
+    validates :token
     validates :postal_code,      format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)"}
     validates :prefecture_id,    numericality: { other_than: 1 , message: "can't be blank" }
     validates :municipalities    
     validates :address               
     validates :telephone_number
+    validates :user_id
+    validates :item_id
 end
     validates :telephone_number, length: { maximum: 11, message: "is too long" }
     validates :telephone_number, length: { minimum: 10, message: "is too short" }
