@@ -42,7 +42,7 @@ has_one :card
 | Column             | Type                | Options                             |
 |--------------------|---------------------|-------------------------------------|
 | user               | references          | foreign_key: true, null:false       |
-| product            | references          | foreign_key: true                   |
+| item               | references          | foreign_key: true                   |
 
 ### Association
 

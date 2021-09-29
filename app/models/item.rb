@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :charge
   has_one_attached :image
   belongs_to :user
-
+  has_one    :card
 
 
   validates :image,         presence: true 
