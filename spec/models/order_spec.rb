@@ -43,6 +43,11 @@ RSpec.describe Order, type: :model do
       @order.valid?
       expect(@order.errors.full_messages).to include("Address can't be blank")
     end
+    it "電話番号が空だと購入できない" do
+      @order.telephone_number = ''
+      @order.valid?
+      expect(@order.errors.full_messages).to include("Telephone number can't be blank")
+    end
     it "電話番号が数字以外だと購入できない" do
       @order.telephone_number = '03-1234-5678'
       @order.valid?
