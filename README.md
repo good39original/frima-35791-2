@@ -15,10 +15,10 @@
 
 ### Association
 
-has_many :products
+has_many :items
 has_many :cards
 
-## products table
+## items table
 
 | Column             | Type                | Options                              |
 |--------------------|---------------------|--------------------------------------|
@@ -42,11 +42,11 @@ has_one :card
 | Column             | Type                | Options                             |
 |--------------------|---------------------|-------------------------------------|
 | user               | references          | foreign_key: true, null:false       |
-| product            | references          | foreign_key: true                   |
+| item               | references          | foreign_key: true, null:false       |
 
 ### Association
 
-belongs_to: product
+belongs_to: item
 has_one: address
 belongs_to: user
 
@@ -66,4 +66,3 @@ belongs_to: user
 
 belongs_to :card
 
-----------------------------------------------------------------------
