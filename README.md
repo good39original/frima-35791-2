@@ -18,7 +18,7 @@
 has_many :items
 has_many :cards
 
-## products table
+## items table
 
 | Column             | Type                | Options                              |
 |--------------------|---------------------|--------------------------------------|
@@ -42,7 +42,7 @@ has_one :card
 | Column             | Type                | Options                             |
 |--------------------|---------------------|-------------------------------------|
 | user               | references          | foreign_key: true, null:false       |
-| item               | references          | foreign_key: true                   |
+| item               | references          | foreign_key: true, null:false       |
 
 ### Association
 
