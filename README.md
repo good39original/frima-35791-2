@@ -15,7 +15,7 @@
 
 ### Association
 
-has_many :products
+has_many :items
 has_many :cards
 
 ## products table
@@ -46,7 +46,7 @@ has_one :card
 
 ### Association
 
-belongs_to: product
+belongs_to: item
 has_one: address
 belongs_to: user
 
